@@ -13,11 +13,20 @@ public class UserRegistrationTest {
     }
     @Test
     void validLastNameShouldPass() {
-        assertTrue(user.validateLastName("Mustafa"));
+        assertTrue(user.validateLastName("Hanchate"));
     }
 
     @Test
     void invalidLastNameShouldFail() {
-        assertFalse(user.validateLastName("mustafa"));
+        assertFalse(user.validateLastName("hanchate"));
+    }
+    @Test
+    void validEmailShouldPass() {
+        assertTrue(user.validateEmail("abc@gmail.com"));
+    }
+
+    @Test
+    void invalidEmailShouldFail() {
+        assertFalse(user.validateEmail("abc@gmail"));
     }
 }
