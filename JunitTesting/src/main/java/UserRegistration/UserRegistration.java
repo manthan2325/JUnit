@@ -12,6 +12,8 @@ public class UserRegistration {
     private static final Pattern EMAIL =
             Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
 
+    private static final Pattern MOBILE =
+            Pattern.compile("^\\+91[- ]?[6-9]\\d{9}$");
 
     public boolean validateFirstName(String firstName) {
         return firstName != null && FIRST_NAME.matcher(firstName).matches();
@@ -23,5 +25,8 @@ public class UserRegistration {
 
     public boolean validateEmail(String email) {
         return email != null && EMAIL.matcher(email).matches();
+    }
+    public boolean validateMobile(String mobile) {
+        return mobile != null && MOBILE.matcher(mobile).matches();
     }
 }
