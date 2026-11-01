@@ -38,4 +38,13 @@ public class UserRegistrationTest {
     void invalidMobileShouldFail() {
         assertFalse(user.validateMobile("99999"));
     }
+    @Test
+    void validPasswordShouldPass() {
+        assertTrue(user.validatePassword("Hello@123"));
+    }
+
+    @Test
+    void invalidPasswordShouldFail() {
+        assertFalse(user.validatePassword("hello123"));
+    }
 }
